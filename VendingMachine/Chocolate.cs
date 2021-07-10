@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VendingMachine
 {
-    class Chocolate : Product
+    public class Chocolate : Product
     {
         bool eaten;
         public Chocolate(int price, string useInfo, string examineInfo) : base(price, useInfo, examineInfo)
@@ -22,6 +22,11 @@ namespace VendingMachine
             examineInfo = "Brun nästan helt fast gegga med papper runt.";
         }
 
+        //Denna property finns enbart för at kunna testa
+        public bool Eaten
+        {
+            get { return eaten; }
+        }
         public override string Use()
         {
             if (eaten)

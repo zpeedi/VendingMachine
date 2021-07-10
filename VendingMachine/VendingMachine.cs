@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VendingMachine
 {
-    class VendingMachine : IVending
+    public class VendingMachine : IVending
     {
         //Dictionary<int, int> money = new Dictionary<int, int>();
         List<Product> products = new List<Product>();
@@ -23,7 +23,7 @@ namespace VendingMachine
         public VendingMachine()
         {
             products.Add(new Snuff(19, "Du har nu jord under läppen.", "ser ut som jord och luktar lite märkligt."));
-            products.Add(new Condom(59, "Irrelevent", "En 10-pack kondomer."));
+            products.Add(new Condome(59, "Irrelevent", "En 10-pack kondomer."));
             products.Add(new Chocolate(8, "En chokladbit.", "Brun nästan helt fast gegga med papper runt."));
             money = 0;
         }
@@ -44,9 +44,9 @@ namespace VendingMachine
             if (t == typeof(Chocolate)) {
                 p = new Chocolate();
             }
-            else if (t == typeof(Condom))
+            else if (t == typeof(Condome))
             {
-                p = new Condom();
+                p = new Condome();
             }
             else 
             {
@@ -91,6 +91,7 @@ namespace VendingMachine
                 returnMoney.Add(d, money / d);
                 money = (money % d); 
             }
+            money = 0;
             return returnMoney;
         }
     }

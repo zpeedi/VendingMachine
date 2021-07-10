@@ -4,16 +4,16 @@ using System.Text;
 
 namespace VendingMachine
 {
-    class Condom : Product
+    public class Condome : Product
     {
-        int condomesLeft;
-        public Condom(int price, string useInfo, string examineInfo) : base(price, useInfo, examineInfo)
+        private int condomesLeft;
+        public Condome(int price, string useInfo, string examineInfo) : base(price, useInfo, examineInfo)
         {
             productName = "Kondomer";
             condomesLeft = 10;
         }
 
-        public Condom()
+        public Condome()
         {
             productName = "Kondomer";
             condomesLeft = 10;
@@ -21,6 +21,12 @@ namespace VendingMachine
             useInfo = "Smakar gott.";
             examineInfo = "En 10-pack kondomer.";
         }
+
+        public int CondomesLeft
+        {
+            get{ return condomesLeft; }
+        }
+       
 
         public override string Use()
         {
